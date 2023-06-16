@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>5 cariocas</title>
+</head>
+<body>
+
+    <script>
+        function calcular()
+     {
+        let preco_custo = document.getElementById("preco_custo").value;
+        let percentual_lucro = document.getElementById("percentual_lucro").value;
+        let preco_venda = document.getElementById("preco_venda").value;
+        preco_venda = parseFloat(preco_custo)+(preco_custo*(percentual_lucro/100));
+        console.log(preco_custo);
+        console.log(percentual_lucro);
+        console.log(preco_venda);
+        document.getElementById("preco_venda").value = preco_venda;
+     }
+     function cadastrar()
+     {
+     let preco_custo = document.getElementById("preco_custo").value;
+     let produto = document.getElementById("produto");
+     }
+    </script>   
+
+
+        <h1 style="font-size: 300%; color: black; text-align: center; margin-bottom: 3%;">5 cariocas </h1>
+        <form>
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" name="produto" required>    
+      <br>
+          
+    
+            <label for="marca">Marca:</label>
+            <select id="marca" name="marca" forwat="currency"  required>
+                <option value="">Selecione uma marca</option>
+                <option value="marca ">FLAMENGO</option>
+                <option value="marca ">FLUMINENSE</option>
+                <option value="marca ">VASCO</option>
+                <option value="Mmrca ">BOTAFOGO</option>
+                <option value="marca ">AMERICA</option>
+      
+            </select>
+    <br>
+    <br>
+    
+
+            <label for="preco_custo">Preço de custo:</label>
+            <input type="number" forwat="currency" id="preco_custo" name="preco_custo" step="0.01" required>
+    <br>
+    
+
+            <label for="percentual_lucro">Percentual de lucro:</label>
+            <input type="number" forwat="currency" id="percentual_lucro" name="percentual_lucro" step="0.01" required onchange="calcularPrecoVenda()">
+    <br>
+    
+
+            <label for="preco_venda">Preço de venda:</label>
+            <input type="number" forwat="currency" id="preco_venda" name="preco_venda" step="0.01" required>
+            <button type="button" onclick="calcular();">Calcular</button>
+  
+  <br>  
+  <br>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" forwat="currency" id="quantidade" name="quantidade" required>
+   <br>
+   <br>
+
+            <label for="imagem">Imagem:</label>
+            <input type="file" id="imagem" name="imagem">
+    <br>
+    <br>
+
+        <center> <button type="button" onclick="cadastrarProduto()">Cadastrar</button></center>   
+        </form>
+    <center>
+        <br><br><br>
+        <div id="produtos">
+            <h2></h2>
+            <!-- Aqui serão listados os produtos cadastrados -->
+
+
+
+
+            <button id="btn-excluir-produto">Excluir Produto</button>
+
+        </div>
+
+        <div>
+
+            
+        </div>
+    
+        <h1>Mudar cor de fundo</h1>
+        <br>
+        <button id="botao" onclick="mudarCor()" style="margin-bottom: 2%;"> Mudar cor</button>
+        <script src="cadastro.js"></script>
+    
+    
+    
+</body>
+</html>
